@@ -19,5 +19,5 @@
 
 #### lifecycle
 
-<img src="https://cn.vuejs.org/images/lifecycle.png" style="width: 120px">
+<img src="https://cn.vuejs.org/images/lifecycle.png" style="max-width: 60px">
 
