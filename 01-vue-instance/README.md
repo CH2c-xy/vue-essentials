@@ -1,19 +1,23 @@
 
 ## Instance
 
-#### Vue component link
+#### vue component link
 
 `https://unpkg.com/vue/dist/vue.js`
 
-#### el and mount 
+#### responsive data
 
-- Specify `el` as file
+#### el and mount
+
+- Specify `el`
 - call `$mount` 
 
 #### template
 
-- 
+- `#app` (anchor)
+- `<div><p>{{ name }}</p></div>` (literal)
 
 #### lifecycle
 
 <img src="https://cn.vuejs.org/images/lifecycle.png" style="width: 120px">
+
