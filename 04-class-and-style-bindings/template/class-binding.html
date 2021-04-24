@@ -1,0 +1,48 @@
+<html>
+    <head>
+    <style>
+
+    .angry {
+        color: red
+    }
+
+    .happy {
+        color: tan
+    }
+
+    </style>
+    </head>
+    <body>
+
+    <div id="app">
+        <div v-bind:class="{angry: isAngry, calm: !isAngry }" :style="styleObject">
+            <h1>ch2c is {{ isAngry ? "angry!" : "happy" }}</h1>
+            <button @click="toggleAnger">{{ isAngry ? "please" : "annoy" }} her</button>
+        </div>
+    </div>
+
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+        
+        new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    position: 'center',
+                    isAngry: true,
+                    styleObject: {
+                        "text-align": position,
+                        "margin": "300px",
+                    }
+                }
+            },
+            methods: {
+                toggleAnger () {
+                    this.isAngry = !this.isAngry;
+                }
+            }
+        })
+        
+        </script>
+    </body>
+</html>
