@@ -1,0 +1,47 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="example">
+            <p>Original message: "{{ message }}"</p>
+            <p>Computed reversed message: "{{ reversedMessage }}"</p>
+            <p>fullname: "{{ fullName }}"</p>
+            <p>firstname: "{{ firstName }}"</p>
+            <p>lastname: "{{ lastName }}"</p>
+        </div>
+
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+        <script>
+
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                message: 'Hello',
+                firstName: "Alicia",
+                lastName: "Chen",
+                // fullName: "Alicia Chen"
+            },
+            //watch: {
+            //    firstName: function(val) {
+            //        this.fullName = val + ' ' + this.lastName
+            //    },
+            //    lastName: function(val) {
+            //        this.fullName = this.firstName + ' ' + val
+            //    }
+            //}
+            computed: {
+                // a computed getter
+                reversedMessage: function () {
+                // `this` points to the vm instance
+                    return this.message.split('').reverse().join('')
+                },
+                fullName: function () {
+                    return this.firstName + " " + this.lastName; 
+                }
+            }
+        })
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="example">
+            <input v-model="number">
+            <p>Factorial of {{ number }} is {{ factorialNumber }}</p>
+        </div>
+
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.3.2/math.js" integrity="sha512-Imer9iTeuCPbyZUYNTKsBWsAk3m7n1vOgPsAmw4OlkGSS9qK3/WlJZg7wC/9kL7nUUOyb06AYS8DyYQV7ELEbg==" crossorigin="anonymous"></script>
+        <script>
+
+        // Hey! Is there something wrong with this instance?
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                number: 0,
+                factorialNumber: 0,
+            },
+            computed: {
+                // a computed getter
+                factorialNumber: function () {
+                    // study math.js documentation and find out how to get a number's factorial.
+                    // YOUR CODE HERE
+                }
+            }
+        })
+
+        </script>
+    </body>
+</html>
