@@ -1,0 +1,48 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="app">
+        
+            <div style="text-align: center; margin: 300px">
+
+                <!-- TODO: change the following "src" attribute to make it responsive to search term. -->
+                <!-- CAUTION: This part is tricky. Try to ask the *right* question and ask google for solution. -->
+                <img src="https://source.unsplash.com/300x300/?dog"></img>
+
+                <div style="padding: 20px">
+
+                    <!-- TODO: call randomSize() when click this button to change another pic with random size -->
+                    <button>change size</button>
+
+                    <!-- Bind -->
+                    <input style="display:inline-block" v-model="searchTerm" />
+
+                </div>
+            </div>
+        
+        </div>
+
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+        <script>
+        
+        new Vue({
+            el: "#app",
+            data: function() {
+                return  {
+                    sizes: ["300x300", "400x400", "500x500"],
+                    currentSize: "300x300",
+                    searchTerm: ""
+                }
+            },
+            methods: {
+                randomSize() {
+                    this.currentSize = this.sizes[Math.floor(Math.random()*this.sizes.length)]
+                }
+            }
+        })
+
+        </script>
+    </body>
+</html>

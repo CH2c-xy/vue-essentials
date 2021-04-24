@@ -1,0 +1,49 @@
+<html>
+    <head>
+    <style>
+    
+    .purple-text {
+        color: purple;
+    }
+
+    .tan-text  {
+        color: tan;
+    }
+
+    </style>
+    </head>
+    <body>
+        <div id="app">
+            <div style="text-align: center; margin: 300px" v-bind:class="textClass">
+                <h3>{{ name }}</h3>
+                <p>{{ description }}</p>
+                <p>{{ counter }}</p>
+                <p>Is it even? {{ counter % 2 == 0 ? "YES" : "NO" }}</p>
+                <button v-on:click="addOne">add one</button>
+            </div>
+
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+        <script>
+
+        new Vue({
+            el: "#app",
+            data: function() {
+                return  {
+                    name: "ch2c",
+                    description: "a bomb",
+                    textClass: "purple-text",
+                    counter: 0,
+                }
+            },
+            methods: {
+                addOne() {
+                    this.counter = this.counter + 1;
+                }
+            }
+        })
+
+        </script>
+    </body>
+</html>
