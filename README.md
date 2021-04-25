@@ -1,2 +1,2 @@
 ## Vue essentials
-say sth
+say nothing
