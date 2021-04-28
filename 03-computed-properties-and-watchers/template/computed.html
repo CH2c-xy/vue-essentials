@@ -1,21 +1,22 @@
 <html>
-    <head>
-    </head>
-    <body>
-        <div id="example">
-            <p>Original message: "{{ message }}"</p>
-            <p>Computed reversed message: "{{ reversedMessage }}"</p>
-            <p>fullname: "{{ fullName }}"</p>
-            <p>firstname: "{{ firstName }}"</p>
-            <p>lastname: "{{ lastName }}"</p>
-            <p>input first name: <input v-model="firstName"></p>
-            <p>input last name: <input v-model="lastName"></p>
-        </div>
 
-        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<head>
+</head>
 
-        <script>
+<body>
+    <div id="example">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage }}"</p>
+        <p>fullname: "{{ fullName }}"</p>
+        <p>firstname: "{{ firstName }}"</p>
+        <p>lastname: "{{ lastName }}"</p>
+        <p>input first name: <input v-model="firstName"></p>
+        <p>input last name: <input v-model="lastName"></p>
+    </div>
 
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <script>
         var vm = new Vue({
             el: '#example',
             data: {
@@ -24,18 +25,21 @@
                 lastName: "Chen",
                 // fullName: "Alicia Chen"
             },
-            //watch: {
-            //    firstName: function(val) {
-            //        this.fullName = val + ' ' + this.lastName
-            //    },
-            //    lastName: function(val) {
-            //        this.fullName = this.firstName + ' ' + val
-            //    }
-            //}
+            // watch: {
+            //     firstName: function (val) {
+            //         this.fullName = val + ' ' + this.lastName
+            //     },
+            //     lastName: function (val) {
+            //         this.fullName = this.firstName + ' ' + val
+            //     }
+            // },
+            created: function () {
+                this.fullName = this.firstName + ' ' + this.lastName
+            },
             computed: {
                 // a computed getter
                 reversedMessage: function () {
-                // `this` points to the vm instance
+                    // `this` points to the vm instance
                     return this.message.split('').reverse().join('')
                 },
                 fullName: function () {
@@ -43,7 +47,7 @@
                 }
             }
         })
+    </script>
+</body>
 
-        </script>
-    </body>
 </html>
