@@ -1,0 +1,38 @@
+<html>
+    <head></head>
+    <body>
+        <div id="condition-with-key">
+            <div v-if="loginType === 'username'">
+                <label>Username</label>
+                <!-- <input placeholder="Enter your username"> -->
+                <input placeholder="Enter your username" key="username-input">
+            </div>
+            <div v-else>
+                <label>Email</label>
+                <!-- <input placeholder="Enter your email address"> -->
+                <input placeholder="Enter your email address" key="email-input">
+            </div>
+            <button @click="toggleLogin">switch login type</button>
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+            new Vue({
+                el: "#condition-with-key",
+                data: function() {
+                    return {
+                        loginType: "username",
+                    }
+                },
+                methods: {
+                    toggleLogin: function () {
+                        if (this.loginType == "username") {
+                            this.loginType = "email"
+                            return
+                        }
+                        this.loginType = "username"
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

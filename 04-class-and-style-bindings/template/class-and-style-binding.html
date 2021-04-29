@@ -7,7 +7,7 @@
     }
 
     .happy {
-        color: tan
+        color: violet
     }
 
     </style>
@@ -15,8 +15,8 @@
     <body>
 
     <div id="app">
-        <div v-bind:class="{angry: isAngry, calm: !isAngry }" :style="styleObject">
-            <h1>ch2c is {{ isAngry ? "angry!" : "happy" }}</h1>
+        <div v-bind:class="{angry: isAngry, happy: !isAngry }" :style="styleObject">
+            <h1>ch2c is {{ isAngry ? "angry!" : "happy~" }}</h1>
             <button @click="toggleAnger">{{ isAngry ? "please" : "annoy" }} her</button>
         </div>
     </div>
@@ -31,7 +31,7 @@
                     position: 'center',
                     isAngry: true,
                     styleObject: {
-                        "text-align": position,
+                        "text-align": this.position,
                         "margin": "300px",
                     }
                 }

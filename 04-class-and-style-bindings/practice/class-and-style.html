@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            .small {
+                width: 300px;
+                height: 300px;
+            }
+            .medium {
+                width: 400px;
+                height: 400px;
+            }
+            .large {
+                width: 500px;
+                height: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div __________ style="background-color: violet; border-radius: 100%;">
+            </div>
+            <button @click="makeSmaller">-</button>
+            <button @click="makeLarger">+</button>
+        </div>
+
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script>
+            new Vue({
+                el: "#app",
+                data: function () {
+                    return {
+                        sizeClasses: ['small', 'medium', 'large'],
+                        sizeIndex: 0
+                    }
+                },
+                methods: {
+                    makeSmaller: function() {
+                        if (this.sizeIndex == 0) {
+                            return
+                        }
+                        this.sizeIndex -= 1;
+                    },
+                    makeLarger: function() {
+                        if (this.sizeIndex == 2) {
+                            return
+                        }
+                        this.sizeIndex += 1;
+                    }
+                },
+                computed: {
+                    sizeClass: function () {
+                        return _________;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
