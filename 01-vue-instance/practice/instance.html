@@ -2,20 +2,15 @@
     <head></head>
     <body>
     
-    <div id="example">
-        <div style="color:purple; text-align:center; margin: 300px;">
-            <h1>ch2c</h1>
-            <p>a kind of inflammable organic compound that's extremely powerful during explosion</p>
-        </div>
-    </div>
+    <div id="app"> </div>
 
     <!-- TODO: make an #example clone with vue -->
     <!-- YOUR CODE HERE -->
-    
+ 
 
     <!-- TODO: import vue-->
     <!-- YOUR CODE HERE -->
-
+    <script src="https://unpkg.com/vue/dist/vue.js"></script> 
 
     <!-- TODO: make a vue instance to render the page -->
     <script>
@@ -23,13 +18,20 @@
     /* Feel free to use the following template or write your own code on scratch. */
 
     new Vue({
-        template: `________`,
+        template:`
+        <div>
+            <h1>{{name}}</h1>
+            <p>{{description}}</p>
+        </div>
+        `,
+        el:"#app",
         data: function() {
             return {
-                // YOUR CODE HERE
+                name: "ch2c",
+                description: "a kind of inflammable organic compound that's extremely powerful during explosion",
             }
         }
-    }).$mount('________');
+    })
 
     </script>
     </body>

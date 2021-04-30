@@ -14,12 +14,12 @@
     </head>
     <body>
         <div id="app">
-            <div style="text-align: center; margin: 300px" v-bind:class="textClass">
+            <div style="text-align: center; margin: 300px"  :class="textClass">
                 <h3>{{ name }}</h3>
                 <p>{{ description }}</p>
                 <p>{{ counter }}</p>
                 <p>Is it even? {{ counter % 2 == 0 ? "YES" : "NO" }}</p>
-                <button v-on:click="addOne">add one</button>
+                <button @click="addOne">add one</button>
             </div>
 
         </div>
