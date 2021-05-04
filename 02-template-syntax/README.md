@@ -17,7 +17,7 @@
 
 - v-if
 - v-bind
-- v-on
+- v-on  
 - v-for
 
 #### shorthands
