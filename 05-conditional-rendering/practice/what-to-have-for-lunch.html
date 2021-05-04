@@ -1,0 +1,79 @@
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="lunch-coordinator">
+            <p>吃午饭么？<input type="checkbox" id="checkbox" v-model="haveLunch"></p>
+
+            <div v-if="haveLunch" style="margin-top: 30px;">
+
+                <select v-model="selected">
+                    <option disabled value="">请选择午饭方向</option>
+                    <option>食宝街和欧美汇</option>
+                    <option>中关村创业步行街</option>
+                    <option>新中关</option>
+                    <option>北大南门</option>
+                </select>
+
+                <!-- 【食宝街和欧美汇】的选择-->
+                <div _______________________>
+                    <ul>
+                        <li>披萨</li>
+                        <li>和府捞面</li>
+                        <li>鸭血粉丝汤</li>
+                        <li>蟑螂面条店</li>
+                    </ul>
+                </div>
+
+                <!-- 【中关村创业步行街】的选择 -->
+                <div ________________________>
+                    <ul>
+                        <li>马兰拉面</li>
+                        <li>醉面</li>
+                        <li>疙瘩汤</li>
+                        <li>杨国福</li>
+                        <li>东来顺</li>
+                    </ul>
+                </div>
+
+                <!-- 【新中关】的选择 -->
+                <div _______________________>
+                    <ul>
+                        <li>澳门味道</li>
+                        <li>巴奴火锅</li>
+                        <li>醉面</li>
+                    </ul>
+                </div>
+
+                <!-- 【北大南门】的选择 -->
+                <div _______________________>
+                    <ul>
+                        <li>砂锅粥</li>
+                    </ul>
+                </div>
+                <div _____>
+                    <p>请在上方选择</p>
+                </div>
+            </div>
+            <div ______>
+                <p>不想吃饭</p>
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+        <script>
+            new Vue({
+                el: "#lunch-coordinator",
+                data: function () {
+                    return {
+                        haveLunch: true,
+                        selected: "",
+                    }
+                },
+
+            })
+        </script>
+    </body>
+</html>
