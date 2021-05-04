@@ -7,7 +7,7 @@
         <div id="lunch-coordinator">
             <p>吃午饭么？<input type="checkbox" id="checkbox" v-model="haveLunch"></p>
 
-            <div v-if="haveLunch" style="margin-top: 30px;">
+            <div __________ style="margin-top: 30px;">
 
                 <select v-model="selected">
                     <option disabled value="">请选择午饭方向</option>
@@ -16,6 +16,11 @@
                     <option>新中关</option>
                     <option>北大南门</option>
                 </select>
+
+                <!-- 
+                    提示：如果没有指定 value=""，Select 绑定的数据就是 <option></option> 里面的内容
+                    例如：选择“新中关”这个选项，“selected” 的值就是"新中关"
+                -->
 
                 <!-- 【食宝街和欧美汇】的选择-->
                 <div _______________________>

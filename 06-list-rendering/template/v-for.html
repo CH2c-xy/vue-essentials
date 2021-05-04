@@ -1,0 +1,192 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table,
+        td {
+            border: 1px solid #333;
+        }
+
+        thead,
+        tfoot {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+
+    <!--
+        Array 的循环
+    -->
+
+    <!-- 最简单的 for 循环-->
+    <div id="vanilla-v-for">
+        <h3>已经学过了的东西：</h3>
+        <p v-for="item in items">{{ item }}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#vanilla-v-for",
+            data: function () {
+                return {
+                    items: ["git", "vue", "linux/macos shell commands"]
+                }
+            }
+        })
+    </script>
+
+    <hr>
+
+    <!-- 带编号的 v-for 版本 -->
+    <div id="numbered-v-for">
+        <h3>已经学过了的东西，“numbered-v-for” 版本</h3>
+        <p v-for="(item, index) in items">{{ index }} - {{ item }}</p>
+    </div>
+
+    <script>
+        var numberedVFor = new Vue({
+            el: "#numbered-v-for",
+            data: function () {
+                return {
+                    items: ["git", "vue", "linux/macos shell commands"]
+                }
+            }
+        })
+    </script>
+
+    <hr>
+
+    <!-- 在一个全是对象的数组中循环 -->
+
+    <h3>Iterate through an array of objects</h3>
+
+    <p>(在这个地方回头要把 key 加上）</p>
+
+    <div id="iterate-through-an-array-of-objects">
+        <p v-for="(item, index) in items">{{ index }}. {{ item.topic }}（{{ item.date }}）</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#iterate-through-an-array-of-objects",
+            data: function () {
+                return {
+                    items: [
+                        { topic: "Shell commands", date: "2021-04-09" },
+                        { topic: "How to deploy a website", date: "2021-04-16" },
+                        { topic: "Git and Github", date: "2021-04-22" },
+                    ]
+                }
+            }
+        })
+    </script>
+
+    <hr>
+
+    <!-- 在一个对象里面循环 -->
+
+    <h3>在一个对象里面做循环</h3>
+
+    <div id="iterate-through-keys-and-values-of-an-object">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Git 和 Github 话题</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(value, name) in gitAndGithubContents">
+                    <td>{{ name }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        new Vue({
+            el: "#iterate-through-keys-and-values-of-an-object",
+            data: function () {
+                return {
+                    gitAndGithubContents: {
+                        lectureDuration: "45mins",
+                        lab: "PR between forked repos",
+                        homework: "\"Pull, Change, Commit, Push, PR\" loop"
+                    }
+                }
+            }
+        })
+    </script>
+
+    <hr>
+
+    <!-- filtered -->
+
+    <h3>Filtered Results with "computed"</h3>
+
+    <div id="filtered-with-computed">
+        <ul>
+            <li v-for="n in evenNumbers">
+                {{ n }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#filtered-with-computed",
+            data: function () {
+                return {
+                    numbers: [1, 2, 3, 4, 5]
+                }
+            },
+            computed: {
+                evenNumbers: function () {
+                    return this.numbers.filter(function (number) {
+                        return number % 2 === 0
+                    })
+                }
+            }
+        })
+    </script>
+
+
+    <hr>
+
+    <!-- filtered -->
+
+    <h3>Filtered Results with "methods"</h3>
+
+    <div id="filtered-with-methods">
+        <ul v-for="set in sets">
+            <li v-for="n in even(set)">{{ n }}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#filtered-with-methods",
+            data: function () {
+                return {
+                    sets: [
+                        [1, 2, 3, 4, 5],
+                        [6, 7, 8, 9, 10]
+                    ]
+                }
+            },
+            methods: {
+                even: function (numbers) {
+                    return numbers.filter(function (number) {
+                        return number % 2 === 0
+                    })
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
