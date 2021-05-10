@@ -2,13 +2,13 @@
     <head></head>
     
     <body>
-        <div id="app"></div>
+        <!-- <div id="app"></div>
 
         <script src="https://unpkg.com/vue/dist/vue.js"></script> 
         <script>
             var myData = { a: 2 }
 
-            new Vue({
+            var vm = new Vue({
                 template: `
                 <div>
                     <h1>hello</h1>
@@ -18,6 +18,50 @@
                 el: "#app",
                 data: myData
             })
+        </script> -->
+
+        <section>
+      <div id="idontknow"></div>
+      <script src="https://unpkg.com/vue/dist/vue.js"></script> 
+        <script>
+            
+            // var whatever = []
+            new Vue({
+                template: `
+                <div>
+                    <h1>hello</h1>
+                    <ul><li>apple</li><li>banana</li></ul>
+                </div>
+                `
+            }).$mount("#idontknow")
         </script>
+
+        </section>
+
+
+        <section>
+            <div id="imnotsure">
+                <div>
+                    <h1>hello</h1>
+                    <ul>
+                        <li v-for="fruit in myFruits">{{ fruit }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <script src="https://unpkg.com/vue/dist/vue.js"></script> 
+
+            <script>
+                var mydata= {a:5}
+                new Vue({
+                    data: {
+                        
+                    }
+                    },
+                    el: "#imnotsure"
+                })
+            </script>
+      
+        </section>
     </body>
 </html>

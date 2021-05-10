@@ -23,7 +23,7 @@
                 message: 'Hello',
                 firstName: "Alicia",
                 lastName: "Chen",
-                // fullName: "Alicia Chen"
+                // fullName: ""
             },
             // watch: {
             //     firstName: function (val) {
@@ -33,20 +33,26 @@
             //         this.fullName = this.firstName + ' ' + val
             //     }
             // },
-            created: function () {
-                this.fullName = this.firstName + ' ' + this.lastName
-            },
+
+            // created: function () {
+            //     this.fullName = this.firstName + ' ' + this.lastName
+            // },
+
             computed: {
                 // a computed getter
                 reversedMessage: function () {
                     // `this` points to the vm instance
+                    // reversedMessage-computed data
                     return this.message.split('').reverse().join('')
                 },
+
                 fullName: function () {
                     return this.firstName + " " + this.lastName; 
-                }
+                }                
             }
         })
+
+        
     </script>
 </body>
 

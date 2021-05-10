@@ -1,7 +1,7 @@
 <html>
     <head>
         <style>
-            .small {
+            /* .small {
                 width: 300px;
                 height: 300px;
             }
@@ -12,12 +12,12 @@
             .large {
                 width: 500px;
                 height: 500px;
-            }
+            } */
         </style>
     </head>
     <body>
         <div id="app">
-            <div :class="[sizeClass]" style="background-color: violet; border-radius: 100%;">
+            <div v-bind:class="[sizeClass]" style="objectStyle"> //结果
             </div>
             <button @click="makeSmaller">-</button>
             <button @click="makeLarger">+</button>
@@ -29,8 +29,9 @@
                 el: "#app",
                 data: function () {
                     return {
-                        sizeClasses: ['small', 'medium', 'large'],
-                        sizeIndex: 0
+                        sizeClasses: ['300', '400', '500'],
+                        sizeIndex: 0,
+
                     }
                 },
                 methods: {
@@ -48,8 +49,13 @@
                     }
                 },
                 computed: {
-                    sizeClass: function () {
-                        return this.sizeClasses[this.sizeIndex];
+                    objectStyle: function () {
+                        return {
+                            "background-color": "violet",
+                            "border-radius": "100%",
+                            "width": this.sizeClasses[this.sizeIndex] + "px",
+                            "height": this.sizeClasses[this.sizeIndex] + "px"
+                        }
                     }
                 }
             })
